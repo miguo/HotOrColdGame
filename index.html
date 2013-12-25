@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Hot or Cold Game</title>
+		<meta charset="UTF-8">
+		<script src="js/raphael.2.1.2.min.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="main.css" />
+	</head>
+
+	<body>
+		<h1>Hot or Cold</h1>
+
+		<div id="myArc"></div>
+
+		<h2 class="feedback-text">Enter your guess below to start playing!</h2>
+		<form class="guess-here">
+			<input type="number" placeholder="Enter a number from 1 to 100." required="true" autocomplete="off" id="guess-box" />
+			<div class="buttons">
+				<button type="submit" class="button-submit">Submit</button>
+				<button type="button" value="Reload Page" onClick="location.reload()" class="button-reset">Start Over</button>
+			</div>
+		</form>
+
+		<div class="instructions">
+			<h2>How to play Hot or Cold</h2>
+			<br>
+			<p>The computer has selected a random number between 1 and 100. Enter your guess in the number box and click Submit. The color meter on top will let you know if your answer is getting colder, warmer, or hotter.</p>
+			<br>
+			<p>Good luck!</p>
+		</div>
+
+	</body>
+
+</html>
+
