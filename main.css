@@ -91,14 +91,14 @@ h1 {
 	margin-top: 20px;
 }
 
-.feedback-text {
+#feedback-text {
 	font-family: 'source_sans_proregular';
 	font-size: 16px;
 	text-align: center;
 }
 
 /* Form and buttons */
-.guess-here {
+#guess-here {
 	width: 500px;
 	height: 120px;
 	margin: auto;
@@ -112,7 +112,7 @@ h1 {
 	margin-bottom: 16px;
 }
 
-.button-submit {
+#button-submit {
 	width: 90px;
 	height: 30px;
 	font-size: 14px;
@@ -130,11 +130,19 @@ h1 {
 	color: #fff;
 }
 
+#previousGuesses {
+	font-family: 'source_sans_proregular';
+	font-size: 16px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
 /* How to play */
 .instructions {
 	width: 530px;
 	margin: auto;
-	margin-top: 30px;
+	margin-top: 40px;
 	text-align: center;
 }
 

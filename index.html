@@ -15,14 +15,16 @@
 
 		<div id="myArc"></div>
 
-		<h2 class="feedback-text">Enter your guess below to start playing!</h2>
-		<form class="guess-here">
-			<input type="number" placeholder="Enter a number from 1 to 100." required="true" autocomplete="off" id="guess-box" />
+		<h2 id="feedback-text">Enter your guess below to start playing!</h2>
+		<form id="guess-here">
+			<input type="number" id="guess-box" placeholder="Enter a number from 1 to 100." required="true" autocomplete="off" />
 			<div class="buttons">
-				<button type="submit" class="button-submit">Submit</button>
-				<button type="button" value="Reload Page" onClick="location.reload()" class="button-reset">Start Over</button>
+				<input type="submit" id="button-submit" value="Submit">
+				<input type="button" class="button-reset" value="Start Over" onclick="location.reload()">
 			</div>
 		</form>
+
+		<div id="previousGuesses">Previous guesses: </div>
 
 		<div class="instructions">
 			<h2>How to play Hot or Cold</h2>
