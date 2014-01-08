@@ -5,33 +5,51 @@ $(document).ready(function() {
 	var randomNumber = Math.floor((Math.random()*100) + 1);
 
 
-	//Generate a random number
+//Generate a random number
  	function getRandomNumber() {
 		console.log("This round's random number is " + randomNumber);
 	}
 
 
-	//New game upon page reload
+//New game upon page reload
 	window.onload = function(){
 		getRandomNumber();
 	}
 
 
-	//Event handler to allow users to submit guess using Enter key
+//Event handler to allow users to submit guess using Enter key
 	$('input').bind('keypress', function(e) {
 	if(e.keyCode == 13) {
 		$('#button-submit').triggerHandler('click');
-	//Note: Reset below clears form field after pressing Enter but not after pressing Submit. Why?
+//Note: Reset below clears form field after pressing Enter but not after pressing Submit. Why?
 		document.getElementById('guess-here').reset();
 	}
 	});
 
 
-	//Play game function
+//Show previous guesses
+	$('#previousGuesses').hide();
+	$('#button-submit').click(function() {
+		var guessNumber = $("#guess-box").val();
+		var numDiff = Math.abs(randomNumber - guessNumber);
+		$('#previousGuesses').show();
+		if (numDiff === 0) {
+			$('#previousGuesses').append(guessNumber);
+		}
+
+		else {
+			$('#previousGuesses').append(guessNumber + ", ");
+		}
+
+	});
+
+
+//Play game function
 	document.getElementById('button-submit').onclick = function playGame() {
 		event.preventDefault();
 		var guessNumber = $("#guess-box").val();
 		var numDiff = Math.abs(randomNumber - guessNumber);
+
 
 		if (guessNumber < 1 || guessNumber > 100) {
 			alert("Your guess must be a number between 1 and 100. Try again.")
@@ -63,26 +81,13 @@ $(document).ready(function() {
 			rectangle.attr({'fill': '#f1c40f', 'stroke': '#f1c40f'});
 		}
 
+		$("#guess-box").val("");
+
 	} 
 
 
-	//Show previous guesses
-	$('#previousGuesses').hide();
-	$('#button-submit').click(function() {
-		var guessNumber = $("#guess-box").val();
-		var numDiff = Math.abs(randomNumber - guessNumber);
-		$('#previousGuesses').show();
-		if (numDiff === 0) {
-			$('#previousGuesses').append(guessNumber);
-		}
-
-		else {
-			$('#previousGuesses').append(guessNumber + ", ");
-		}
-
-	});
 
 
 
-	});
+});
 
