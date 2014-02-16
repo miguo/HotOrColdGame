@@ -21,7 +21,6 @@ $(document).ready(function() {
 	$('input').bind('keypress', function(e) {
 	if(e.keyCode == 13) {
 		$('#button-submit').triggerHandler('click');
-//Note: Reset below clears form field after pressing Enter but not after pressing Submit. Why?
 		document.getElementById('guess-here').reset();
 	}
 	});
